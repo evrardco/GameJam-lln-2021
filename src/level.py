@@ -7,6 +7,7 @@ import arcade.tilemap
 from os.path import join
 from src.object_layer import ObjectParser
 from src.entities.towers.redneck import Redneck
+from src.playerInterface import PlayerInterface
 
 class Level(arcade.View):
     """
@@ -43,7 +44,7 @@ class Level(arcade.View):
     def on_show_view(self):
         """ Called once when view is activated. """
         self.setup()
-        arcade.set_background_color(arcade.color.BLACK)
+        arcade.set_background_color(arcade.color.DARK_BLUE_GRAY)
 
     def on_hide_view(self):
         self.ui_manager.unregister_handlers()
@@ -77,6 +78,8 @@ class Level(arcade.View):
         self.tower_list = []
         for p in oparser.tower_spots:
             self.tower_list.append(Redneck(self.enemy_list, center_x=p["x"], center_y=self.window.height - p["y"]))
+
+        self.interface = PlayerInterface(self.ui_manager)
         
     
     def on_mouse_press(self, x: float, y: float, button: int, modifiers: int):

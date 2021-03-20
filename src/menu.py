@@ -4,7 +4,6 @@ import arcade.gui
 from arcade.gui import UIManager
 from src.level import Level
 
-
 class MyFlatButton(arcade.gui.UIFlatButton):
     def __init__(self, window, *args, **kwargs):
         super().__init__(*args, **kwargs)

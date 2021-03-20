@@ -1,8 +1,6 @@
 import arcade
 import arcade.gui
-from arcade.gui import UIManager
-
-
+from src.globals import GAME_WIDTH
 
 class WaveButton(arcade.gui.UIFlatButton):
     def __init__(self, *args, **kwargs):
@@ -19,43 +17,28 @@ class TowerButton(arcade.gui.UIFlatButton):
         print("Tower type selected !")
 
 
-class PlayerInterface(arcade.View):
-    def __init__(self):
+class PlayerInterface():
+    def __init__(self, ui_manager):
         super().__init__()
-        self.ui_manager = UIManager()
-
-    def on_draw(self):
-        """ Draw this view. GUI elements are automatically drawn. """
-        arcade.start_render()
-
-    def on_show_view(self):
-        """ Called once when view is activated. """
-        self.setup()
-        arcade.set_background_color(arcade.color.BLUE_GREEN)
-
-    def on_hide_view(self):
-        self.ui_manager.unregister_handlers()
-
+        self.ui_manager = ui_manager
     
-    def setup(self):
-        """ Set up this view. """
-        self.ui_manager.purge_ui_elements()
-
         self.ui_manager.add_ui_element(arcade.gui.UILabel(
-            "Tweeter followers :",
-            center_x=600,
-            center_y=700
+            "Followers:",
+            center_x=GAME_WIDTH + 100,
+            center_y=700,
+            width=200,
         ))
         
         self.ui_manager.add_ui_element(arcade.gui.UILabel(
-            "Votes counted :",
-            center_x=600,
+            "Votes counted:",
+            center_x=GAME_WIDTH + 100,
+            width=200,
             center_y=600
         ))
 
         self.ui_manager.add_ui_element(arcade.gui.UILabel(
             "1000",
-            center_x=600,
+            center_x=GAME_WIDTH + 100,
             center_y=650,
             width=200,
             height=25
@@ -63,16 +46,25 @@ class PlayerInterface(arcade.View):
 
         self.ui_manager.add_ui_element(arcade.gui.UILabel(
             "2000",
-            center_x=600,
+            center_x=GAME_WIDTH + 100,
             center_y=550,
             width=200,
             height=25
         ))
 
+        self.ui_manager.add_ui_element(arcade.gui.UILabel(
+            "Buildings:",
+            center_x=GAME_WIDTH + 100,
+            center_y=300,
+            width=200,
+            height=25
+        ))
+
+
         waveButton = WaveButton(
             'Next Wave',
-            center_x=600,
-            center_y=200,
+            center_x=GAME_WIDTH + 100,
+            center_y=50,
             width=200,
             height=50
         )
@@ -81,8 +73,8 @@ class PlayerInterface(arcade.View):
 
         towerButton1 = TowerButton(
             'Tower type 1',
-            center_x=150,
-            center_y=700,
+            center_x=GAME_WIDTH + 100,
+            center_y=250,
             width=200,
             height=50
         )
@@ -91,22 +83,22 @@ class PlayerInterface(arcade.View):
 
         towerButton2 = TowerButton(
             'Tower type 2',
-            center_x=150,
-            center_y=400,
-            width=200,
-            height=50
-        )
-
-        self.ui_manager.add_ui_element(towerButton1)
-
-        towerButton3 = TowerButton(
-            'Tower type 3',
-            center_x=150,
+            center_x=GAME_WIDTH + 100,
             center_y=200,
             width=200,
             height=50
         )
 
-        self.ui_manager.add_ui_element(towerButton1)
+        self.ui_manager.add_ui_element(towerButton2)
+
+        towerButton3 = TowerButton(
+            'Tower type 3',
+            center_x=GAME_WIDTH + 100,
+            center_y=150,
+            width=200,
+            height=50
+        )
+
+        self.ui_manager.add_ui_element(towerButton3)
 
     
