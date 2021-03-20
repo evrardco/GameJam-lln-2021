@@ -4,7 +4,7 @@ from arcade.gui.ui_style import UIStyle
 from src.menu import Menu
 
 if __name__ == "__main__":
-    # creates a new class, which will match the id
+    # Sets a basic UIStyle for a label
     UIStyle.default_style().set_class_attrs(
         'label',
         font_color=arcade.color.WHITE,
