@@ -2,7 +2,7 @@ import arcade
 from arcade.gui.ui_style import UIStyle
 
 from src.menu import Menu
-
+from src.level import Level
 if __name__ == "__main__":
     # Sets a basic UIStyle for a label
     UIStyle.default_style().set_class_attrs(
@@ -13,5 +13,5 @@ if __name__ == "__main__":
     )
 
     window = arcade.Window(title='Democracy defender', height=800, width=800)
-    window.show_view(Menu())
+    window.show_view(Level("level_1"))
     arcade.run()
