@@ -1,9 +1,9 @@
-import arcade
+from os.path import join
 from arcade.sprite import Sprite
 from numpy.linalg import norm
 from math import pi
 class BaseEnnemy(Sprite):
-    def __init__(self, path, **kwargs):
+    def __init__(self, path, enemies, **kwargs):
         super().__init__(**kwargs)
         self.speed = 300
         self.path = path.copy()
@@ -11,6 +11,9 @@ class BaseEnnemy(Sprite):
         self.center_x, self.center_y = self.curr_goal["x"], self.curr_goal["y"]
         self.update_vel(self.curr_goal["turn_dir"])
         self.curr_goal = self.path.pop(0)
+        self.health = 10
+        self.enemies = enemies
+
 
 
     
@@ -18,6 +21,8 @@ class BaseEnnemy(Sprite):
         if delta_time > 1:
             #delta time post loading is too long
             return
+        if self.health <= 0:
+            self.enemies.remove(self)
         self.center_x += self.vel_x * self.speed * delta_time
         self.center_y += self.vel_y * self.speed * delta_time
 
@@ -81,5 +86,6 @@ class BaseEnnemy(Sprite):
                 self.radians += pi/2
             elif new_dir == "up":
                 self.radians -= pi/2
+
 
 
