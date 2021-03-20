@@ -1,6 +1,8 @@
 import json
 from os.path import join
 from src.globals import HEIGHT
+
+
 class ObjectParser:
     def __init__(self, name):
         self.root = None
