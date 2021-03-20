@@ -1,13 +1,12 @@
+from src.entities.ennemies.truck import Truck
 import arcade
 
 import arcade.gui
 from arcade.gui import UIManager
-from arcade.sprite_list import SpriteList
 import arcade.tilemap
 from os.path import join
 from src.object_layer import ObjectParser
 from src.entities.towers.redneck import Redneck
-from src.entities.ennemies.base_enemy import BaseEnnemy
 
 class Level(arcade.View):
     """
@@ -68,8 +67,10 @@ class Level(arcade.View):
         oparser = ObjectParser(self.name)
         self.path = oparser.path_finding
 
+        self.health = 20
+
         self.enemy_list = []
-        self.enemy_list.append(BaseEnnemy(self.path, self.enemy_list))
+        self.enemy_list.append(Truck(self.path, self.enemy_list))
 
         self.projectile_list = []
 

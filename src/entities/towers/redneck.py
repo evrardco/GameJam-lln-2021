@@ -30,7 +30,7 @@ class Projectile(Sprite):
 
 class Redneck(Tower):
     def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
+        super().__init__(*args, **kwargs, true_texture=join("assets", "sprite.jpg"))
 
         self.projectiles = []
 

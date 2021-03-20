@@ -2,9 +2,11 @@ from os.path import join
 from arcade.sprite import Sprite
 from numpy.linalg import norm
 from math import pi
+
+
 class BaseEnnemy(Sprite):
-    def __init__(self, path, enemies, **kwargs):
-        super().__init__(**kwargs)
+    def __init__(self, path, enemies, *args, **kwargs):
+        super().__init__(*args, **kwargs)
         self.speed = 300
         self.path = path.copy()
         self.curr_goal = self.path.pop(0)
@@ -13,8 +15,6 @@ class BaseEnnemy(Sprite):
         self.curr_goal = self.path.pop(0)
         self.health = 10
         self.enemies = enemies
-
-
 
     
     def on_update(self, delta_time):
@@ -34,9 +34,6 @@ class BaseEnnemy(Sprite):
             self.update_vel(self.curr_goal["turn_dir"])
             self.rotate(old_dir, self.dir)
             self.curr_goal = self.path.pop(0)
-
-
-
 
 
     def update_vel(self, dir):
