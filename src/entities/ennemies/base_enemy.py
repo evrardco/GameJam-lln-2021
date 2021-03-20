@@ -74,7 +74,7 @@ class BaseEnnemy(Sprite):
                 self.radians -= 2*pi/2
         elif old_dir == "down":
             if new_dir == "right":
-                self.radians -= pi/2
+                self.radians += pi/2
             elif new_dir == "up":
                 self.radians -= 2*pi/2
             elif new_dir == "left":
