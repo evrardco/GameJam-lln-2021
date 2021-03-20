@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.4" tiledversion="1.4.3" orientation="orthogonal" renderorder="right-down" width="50" height="50" tilewidth="16" tileheight="16" infinite="0" nextlayerid="5" nextobjectid="60">
+<map version="1.4" tiledversion="1.4.3" orientation="orthogonal" renderorder="right-down" width="50" height="50" tilewidth="16" tileheight="16" infinite="0" nextlayerid="5" nextobjectid="61">
  <editorsettings>
   <export target="level_1.tmx" format="tmx"/>
  </editorsettings>
@@ -439,36 +439,75 @@
  </objectgroup>
  <objectgroup id="2" name="path_finding">
   <object id="6" name="1" x="48" y="704">
+   <properties>
+    <property name="turn_dir" value="&quot;right&quot;"/>
+   </properties>
    <point/>
   </object>
   <object id="7" name="2" x="720" y="704">
+   <properties>
+    <property name="turn_dir" value="up"/>
+   </properties>
    <point/>
   </object>
   <object id="9" name="3" x="720" y="560">
+   <properties>
+    <property name="turn_dir" value="left"/>
+   </properties>
    <point/>
   </object>
   <object id="10" name="4" x="48" y="560">
+   <properties>
+    <property name="turn_dir" value="up"/>
+   </properties>
    <point/>
   </object>
   <object id="11" name="5" x="48" y="416">
+   <properties>
+    <property name="turn_dir" value="right"/>
+   </properties>
    <point/>
   </object>
   <object id="13" name="6" x="720" y="416">
+   <properties>
+    <property name="turn_dir" value="up"/>
+   </properties>
    <point/>
   </object>
   <object id="14" name="7" x="720" y="272">
+   <properties>
+    <property name="turn_dir" value="left"/>
+   </properties>
    <point/>
   </object>
   <object id="16" name="8" x="48" y="272">
+   <properties>
+    <property name="turn_dir" value="up"/>
+   </properties>
    <point/>
   </object>
   <object id="17" name="9" x="48" y="128">
+   <properties>
+    <property name="turn_dir" value="right"/>
+   </properties>
    <point/>
   </object>
   <object id="18" name="10" x="720" y="128">
+   <properties>
+    <property name="turn_dir" value="up"/>
+   </properties>
    <point/>
   </object>
   <object id="20" name="11" x="720" y="16">
+   <properties>
+    <property name="turn_dir" value="&quot;nil&quot;"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="60" name="0" x="48" y="800">
+   <properties>
+    <property name="turn_dir" value="up"/>
+   </properties>
    <point/>
   </object>
  </objectgroup>
