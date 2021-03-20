@@ -2,6 +2,7 @@ from os.path import join
 from arcade.sprite import Sprite
 from numpy.linalg import norm
 from math import pi
+from src.helpers import total_rotational_increment
 class BaseEnnemy(Sprite):
     def __init__(self, path, enemies, **kwargs):
         super().__init__(**kwargs)
@@ -30,9 +31,10 @@ class BaseEnnemy(Sprite):
         dist = abs(self.center_x - nx) + abs(self.center_y - ny)
         if dist <= 2 * self.speed * delta_time:
             old_dir = self.dir
+            
             self.center_x, self.center_y = self.curr_goal["x"], self.curr_goal["y"]
             self.update_vel(self.curr_goal["turn_dir"])
-            self.rotate(old_dir, self.dir)
+            self.radians += total_rotational_increment(old_dir, self.dir)
             self.curr_goal = self.path.pop(0)
 
 
@@ -56,36 +58,6 @@ class BaseEnnemy(Sprite):
             raise(Exception(f"Unrecognized direction {dir}"))
         self.vel_x, self.vel_y = x, y
         self.dir = dir
-
-    def rotate(self, old_dir, new_dir):
-        if old_dir == "up":
-            if new_dir == "right":
-                self.radians -= pi/2
-            elif new_dir == "down":
-                self.radians += 2*pi/2
-            elif new_dir == "left":
-                self.radians += pi/2
-        elif old_dir == "right":
-            if new_dir == "up":
-                self.radians += pi/2
-            elif new_dir == "down":
-                self.radians -= pi/2
-            elif new_dir == "left":
-                self.radians -= 2*pi/2
-        elif old_dir == "down":
-            if new_dir == "right":
-                self.radians += pi/2
-            elif new_dir == "up":
-                self.radians -= 2*pi/2
-            elif new_dir == "left":
-                self.radians -= pi/2
-        elif old_dir == "left":
-            if new_dir == "right":
-                self.radians += 2*pi/2
-            elif new_dir == "down":
-                self.radians += pi/2
-            elif new_dir == "up":
-                self.radians -= pi/2
 
 
 
