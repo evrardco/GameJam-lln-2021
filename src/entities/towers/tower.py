@@ -4,11 +4,11 @@ from arcade import load_texture
 
 
 class Tower(Sprite):
-    def __init__(self, enemies, *args, **kwargs):
+    def __init__(self, enemies, true_texture, *args, **kwargs):
         super().__init__(join("assets", "empty.jpg"), *args, **kwargs)
         self.range = 100
         self.lvl = 0
-        self.true_texture = load_texture(join("assets", "sprite.jpg"))
+        self.true_texture = load_texture(true_texture)
         self.fire_rate = 1  # fire per ms
         self.enemies = enemies
         self.id = Tower.id_counter

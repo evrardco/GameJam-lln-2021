@@ -16,7 +16,7 @@ class ObjectParser:
                     "turn_dir":o["properties"][0]["value"]
                     } for o in l["objects"]]
                 self.path_finding = sorted(objects, key=lambda x: int(x["name"]))
-                print(self.path_finding)
+                # print(self.path_finding)
                 
             if l["name"] == "tower_spots":
                 self.tower_spots = l["objects"]
