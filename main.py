@@ -3,8 +3,7 @@ from arcade.gui.ui_style import UIStyle
 
 from src.menu import Menu
 from src.level import Level
-
-from src.globals import HEIGHT, WIDTH
+from src.globals import *
 
 
 if __name__ == "__main__":
