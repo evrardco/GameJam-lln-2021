@@ -12,6 +12,6 @@ if __name__ == "__main__":
         font_color_press=arcade.color.WHITE,
     )
 
-    window = arcade.Window(title='Democracy defender', height=600, width=800)
+    window = arcade.Window(title='Democracy defender', height=800, width=800)
     window.show_view(Menu())
     arcade.run()

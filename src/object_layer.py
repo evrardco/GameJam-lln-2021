@@ -7,7 +7,7 @@ class ObjectParser:
             self.root = json.load(f)
         for l in self.root["layers"]:
             if l["name"] == "path_finding":
-                self.path_finding = sorted(l["objects"], key=lambda x: x["name"])
+                self.path_finding = sorted(l["objects"], key=lambda x: int(x["name"]))
             if l["name"] == "tower_spots":
                 self.tower_spots = l["objects"]
 

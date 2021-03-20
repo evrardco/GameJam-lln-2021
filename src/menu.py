@@ -47,7 +47,7 @@ class Menu(arcade.View):
 
         button = MyFlatButton(
             self.window,
-            'Level 1',
+            'level_1',
             center_x=self.window.width // 2,
             center_y=y_slot * 2,
             width=250,
