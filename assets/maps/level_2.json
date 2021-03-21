@@ -183,35 +183,13 @@
          "objects":[
                 {
                  "height":19,
-                 "id":28,
-                 "name":"wave_1",
-                 "properties":[
-                        {
-                         "name":"json",
-                         "type":"string",
-                         "value":"{\"num\": \"1\", \"dt\":\"2\", \"enemies\":[{\"bearer\": \"10\"}, {\"reporter\": \"10\"}]}"
-                        }],
-                 "rotation":0,
-                 "text":
-                    {
-                     "text":"wave_1",
-                     "wrap":true
-                    },
-                 "type":"",
-                 "visible":true,
-                 "width":120.625,
-                 "x":623.898026315789,
-                 "y":-148.597744360902
-                }, 
-                {
-                 "height":19,
                  "id":29,
                  "name":"game_values",
                  "properties":[
                         {
                          "name":"json",
                          "type":"string",
-                         "value":"{\"max_votes\": \"50\", \"followers\": \"15\", \"pause_time\": \"30\"}"
+                         "value":"{\"max_votes\": \"50\", \"followers\": \"15\", \"pause_time\": \"10\"}"
                         }],
                  "rotation":0,
                  "text":
@@ -224,6 +202,94 @@
                  "width":120.625,
                  "x":626.71757518797,
                  "y":-112.883458646617
+                }, 
+                {
+                 "height":19,
+                 "id":30,
+                 "name":"wave_1",
+                 "properties":[
+                        {
+                         "name":"json",
+                         "type":"string",
+                         "value":"{\"num\": \"1\", \"dt\":\"2\", \"enemies\":[{\"bearer\": \"10\"}, {\"reporter\": \"5\"}]}"
+                        }],
+                 "rotation":0,
+                 "text":
+                    {
+                     "text":"wave_1",
+                     "wrap":true
+                    },
+                 "type":"",
+                 "visible":true,
+                 "width":120.625,
+                 "x":572.062353383459,
+                 "y":200.338495864662
+                }, 
+                {
+                 "height":19,
+                 "id":31,
+                 "name":"wave_2",
+                 "properties":[
+                        {
+                         "name":"json",
+                         "type":"string",
+                         "value":"{\"num\": \"2\", \"dt\":\"0.3\", \"enemies\":[{\"bearer\": \"3\"}, {\"reporter\":\"20\"}]}"
+                        }],
+                 "rotation":0,
+                 "text":
+                    {
+                     "text":"wave_2",
+                     "wrap":true
+                    },
+                 "type":"",
+                 "visible":true,
+                 "width":120.625,
+                 "x":540.395353383459,
+                 "y":285.338495864662
+                }, 
+                {
+                 "height":19,
+                 "id":32,
+                 "name":"wave_3",
+                 "properties":[
+                        {
+                         "name":"json",
+                         "type":"string",
+                         "value":"{\"num\": \"3\", \"dt\":\"2\", \"enemies\":[{\"truck\": \"10\"}, {\"reporter\":\"5\"}]}"
+                        }],
+                 "rotation":0,
+                 "text":
+                    {
+                     "text":"wave_3",
+                     "wrap":true
+                    },
+                 "type":"",
+                 "visible":true,
+                 "width":120.625,
+                 "x":571.728353383459,
+                 "y":339.671495864662
+                }, 
+                {
+                 "height":19,
+                 "id":33,
+                 "name":"wave_4",
+                 "properties":[
+                        {
+                         "name":"json",
+                         "type":"string",
+                         "value":"{\"num\": \"3\", \"dt\":\"1.5\", \"enemies\":[{\"truck\": \"15\"}, {\"reporter\":\"15\"}]}"
+                        }],
+                 "rotation":0,
+                 "text":
+                    {
+                     "text":"wave_4",
+                     "wrap":true
+                    },
+                 "type":"",
+                 "visible":true,
+                 "width":120.625,
+                 "x":543.728353383459,
+                 "y":162.005195864662
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -403,6 +469,234 @@
                  "width":0,
                  "x":464,
                  "y":624
+                }, 
+                {
+                 "height":0,
+                 "id":34,
+                 "name":"",
+                 "point":true,
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":688,
+                 "y":368
+                }, 
+                {
+                 "height":0,
+                 "id":35,
+                 "name":"",
+                 "point":true,
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":688,
+                 "y":400
+                }, 
+                {
+                 "height":0,
+                 "id":36,
+                 "name":"",
+                 "point":true,
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":688,
+                 "y":432
+                }, 
+                {
+                 "height":0,
+                 "id":37,
+                 "name":"",
+                 "point":true,
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":688,
+                 "y":464
+                }, 
+                {
+                 "height":0,
+                 "id":38,
+                 "name":"",
+                 "point":true,
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":480,
+                 "y":496
+                }, 
+                {
+                 "height":0,
+                 "id":39,
+                 "name":"",
+                 "point":true,
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":544,
+                 "y":496
+                }, 
+                {
+                 "height":0,
+                 "id":40,
+                 "name":"",
+                 "point":true,
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":608,
+                 "y":496
+                }, 
+                {
+                 "height":0,
+                 "id":41,
+                 "name":"",
+                 "point":true,
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":608,
+                 "y":352
+                }, 
+                {
+                 "height":0,
+                 "id":42,
+                 "name":"",
+                 "point":true,
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":544,
+                 "y":352
+                }, 
+                {
+                 "height":0,
+                 "id":43,
+                 "name":"",
+                 "point":true,
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":480,
+                 "y":352
+                }, 
+                {
+                 "height":0,
+                 "id":44,
+                 "name":"",
+                 "point":true,
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":480,
+                 "y":208
+                }, 
+                {
+                 "height":0,
+                 "id":45,
+                 "name":"",
+                 "point":true,
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":544,
+                 "y":208
+                }, 
+                {
+                 "height":0,
+                 "id":46,
+                 "name":"",
+                 "point":true,
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":608,
+                 "y":208
+                }, 
+                {
+                 "height":0,
+                 "id":47,
+                 "name":"",
+                 "point":true,
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":688,
+                 "y":208
+                }, 
+                {
+                 "height":0,
+                 "id":48,
+                 "name":"",
+                 "point":true,
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":752,
+                 "y":208
+                }, 
+                {
+                 "height":0,
+                 "id":49,
+                 "name":"",
+                 "point":true,
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":528,
+                 "y":624
+                }, 
+                {
+                 "height":0,
+                 "id":50,
+                 "name":"",
+                 "point":true,
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":592,
+                 "y":624
+                }, 
+                {
+                 "height":0,
+                 "id":51,
+                 "name":"",
+                 "point":true,
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":656,
+                 "y":624
+                }, 
+                {
+                 "height":0,
+                 "id":53,
+                 "name":"",
+                 "point":true,
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":720,
+                 "y":624
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -411,7 +705,7 @@
          "y":0
         }],
  "nextlayerid":5,
- "nextobjectid":30,
+ "nextobjectid":54,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.4.3",
