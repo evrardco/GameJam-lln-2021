@@ -1,5 +1,6 @@
 import arcade
 import arcade.gui
+from src.entities.towers.tower_spot import TowerSpot
 from src.globals import GAME_WIDTH
 from src.entities.towers.redneck import Redneck
 
@@ -17,13 +18,15 @@ class TowerButton(arcade.gui.UIFlatButton):
         self.game_level = game_level
 
     def on_click(self):
-        # if self.game_level.selected_tower.lvl == 0:
-        #     new_t = Redneck(self.game_level, center_x=self.center_x, center_y=self.center_y)
-        #     self.game_level.tower_list = [new_t if i == self.game_level.selected_tower else i for i in self.game_level.tower_list]
-        #     self.game_level.selected_tower = new_t
+        selected_t = self.game_level.selected_tower
+        new_t = None
+        if self.text == "Redneck":
+            new_t = Redneck(self.game_level, center_x=selected_t[0].center_x, center_y=selected_t[0].center_y)
+        else:
+            return
+        selected_t.append(new_t)
+        self.game_level.selected_tower[1].lvl_up()
 
-        # self.game_level.selected_tower.lvl_up()
-        pass
 
 
 class PlayerInterface():

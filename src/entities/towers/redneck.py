@@ -30,7 +30,7 @@ class Projectile(Sprite):
 
 class Redneck(Tower):
     def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs, true_texture=join("assets", "sprite.jpg"))
+        super().__init__(filename=join("assets", "sprite.jpg"), *args, **kwargs)
 
         self.cost = 2
         self.projectiles = []
@@ -39,7 +39,6 @@ class Redneck(Tower):
     def draw(self):
         for p in self.projectiles:
             p.draw()
-
         return super().draw()
 
     def on_update(self, delta_time: float):
