@@ -6,7 +6,8 @@ from arcade import load_spritesheet, load_texture
 from os.path import join
 textures = load_spritesheet(join("assets", "entities", "towers", "redneck.png"), 32, 32, 1, 2)
 texture_delay = 0.1
-rock_texture = load_texture(join("assets", "sprite.jpg"))
+rock_texture = load_texture(join("assets", "entities", "towers", "rock.png"))
+
 class Projectile(Sprite):
     def __init__(self, target, tower, *args, **kwargs):
         super().__init__(*args, **kwargs, scale=0.5)
