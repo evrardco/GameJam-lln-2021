@@ -7,6 +7,7 @@ import arcade.tilemap
 from os.path import join
 from src.object_layer import ObjectParser
 from src.entities.towers.redneck import Redneck
+from src.entities.ennemies.bearer import Bearer
 from src.playerInterface import PlayerInterface
 from src.wave_manager import WaveManager
 
@@ -24,7 +25,6 @@ class Level(arcade.View):
     def on_draw(self):
         """ Draw this view. GUI elements are automatically drawn. """
         arcade.start_render()
-
         self.map.draw()
 
         for t in self.tower_list:
@@ -66,7 +66,6 @@ class Level(arcade.View):
         self.path = oparser.path_finding
 
         self.enemy_list = []
-        self.enemy_list.append(Truck(self))
 
         self.projectile_list = []
 

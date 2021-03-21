@@ -1,5 +1,6 @@
 from typing import Dict
 from src.entities.ennemies.enemy_factory import new_enemy
+from random import shuffle
 class WaveManager:
     def __init__(self, game_level, wave_list: Dict) -> None:
         self.wave_list = wave_list
@@ -19,6 +20,7 @@ class WaveManager:
         for d in wave_info["enemies"]:
             for k, v in d.items():
                 self.enemies_to_spawn += [k for _ in range(int(v))]
+        shuffle(self.enemies_to_spawn)
         self.timer = 0
     
     def on_update(self, delta_time: float):
@@ -34,7 +36,7 @@ class WaveManager:
                 return
             print("Spawning enemy")
             enemy_type = self.enemies_to_spawn.pop(0)
-            self.level.enemy_list.append(new_enemy(enemy_type, self.level))
+            self.level.enemy_list.insert(0, new_enemy(enemy_type, self.level))
             self.timer = self.dt
 
 
