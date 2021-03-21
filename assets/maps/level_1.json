@@ -712,7 +712,7 @@
                         {
                          "name":"json",
                          "type":"string",
-                         "value":"{\"num\": \"2\", \"dt\":\"0.3\", \"enemies\":[{\"bearer\": \"50\"}]}"
+                         "value":"{\"num\": \"2\", \"dt\":\"0.3\", \"enemies\":[{\"bearer\": \"3\"}, {\"reporter\":\"20\"}]}"
                         }],
                  "rotation":0,
                  "text":
@@ -725,6 +725,50 @@
                  "width":120.625,
                  "x":836.020833333333,
                  "y":99.5
+                }, 
+                {
+                 "height":19,
+                 "id":67,
+                 "name":"wave_3",
+                 "properties":[
+                        {
+                         "name":"json",
+                         "type":"string",
+                         "value":"{\"num\": \"3\", \"dt\":\"2\", \"enemies\":[{\"truck\": \"10\"}, {\"reporter\":\"5\"}]}"
+                        }],
+                 "rotation":0,
+                 "text":
+                    {
+                     "text":"wave_3",
+                     "wrap":true
+                    },
+                 "type":"",
+                 "visible":true,
+                 "width":120.625,
+                 "x":867.354166666667,
+                 "y":153.833333333333
+                }, 
+                {
+                 "height":19,
+                 "id":68,
+                 "name":"wave_4",
+                 "properties":[
+                        {
+                         "name":"json",
+                         "type":"string",
+                         "value":"{\"num\": \"3\", \"dt\":\"1.5\", \"enemies\":[{\"truck\": \"15\"}, {\"reporter\":\"15\"}]}"
+                        }],
+                 "rotation":0,
+                 "text":
+                    {
+                     "text":"wave_4",
+                     "wrap":true
+                    },
+                 "type":"",
+                 "visible":true,
+                 "width":120.625,
+                 "x":839.354166666667,
+                 "y":-23.8333333333333
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -733,7 +777,7 @@
          "y":0
         }],
  "nextlayerid":6,
- "nextobjectid":67,
+ "nextobjectid":69,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.4.3",

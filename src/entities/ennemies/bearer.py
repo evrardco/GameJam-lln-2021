@@ -13,7 +13,7 @@ class Bearer(BaseEnemy):
         self.speed = 80
         self.scale = 0.5
         self.dmg = 1
-        self.health = 2
+        self.health = 3
         self.max_health = self.health
         self.reward = 2
 

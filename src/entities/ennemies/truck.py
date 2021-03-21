@@ -9,7 +9,7 @@ class Truck(BaseEnemy):
                             filename=join("assets", "entities", "ennemies", "basic_truck.png"),
                             scale=0.3,
                         )
-        self.max_health = 30
+        self.max_health = 100
         self.health = self.max_health
         self.speed = 50
         self.radians = 3 * pi/2
