@@ -1,3 +1,4 @@
+from src.entities.towers.tower_spot import TowerSpot
 from src.entities.ennemies.truck import Truck
 import arcade
 
@@ -6,7 +7,6 @@ from arcade.gui import UIManager
 import arcade.tilemap
 from os.path import join
 from src.object_layer import ObjectParser
-from src.entities.towers.redneck import Redneck
 from src.playerInterface import PlayerInterface
 from src.wave_manager import WaveManager
 
@@ -28,7 +28,9 @@ class Level(arcade.View):
         self.map.draw()
 
         for t in self.tower_list:
-            t.draw()
+            t[0].draw()
+            if len(t) > 1:
+                t[1].draw()
 
         for e in self.enemy_list:
             e.draw()
@@ -39,7 +41,8 @@ class Level(arcade.View):
             e.on_update(delta_time)
 
         for t in self.tower_list:
-            t.on_update(delta_time)
+            if len(t) > 1:
+                t[1].on_update(delta_time)
 
         if self.votes >= self.max_votes:
             print("GAME OVER")
@@ -72,8 +75,9 @@ class Level(arcade.View):
 
         self.tower_list = []
         for p in oparser.tower_spots:
-            self.tower_list.append(Redneck(self, center_x=p["x"], center_y=self.window.height - p["y"]))
-        
+            self.tower_list.append([TowerSpot(join("assets", "empty.jpg"), center_x=p["x"], center_y=self.window.height - p["y"])])
+
+
         self.max_votes = oparser.max_votes
         self.votes = 0
         self.followers = oparser.followers
@@ -83,18 +87,24 @@ class Level(arcade.View):
         self.interface = PlayerInterface(self)
 
         self.selected_tower = None
-        
-    
+
+
     def on_mouse_press(self, x: float, y: float, button: int, modifiers: int):
         for t in self.tower_list:
-            if t.collides_with_point(self.mouse_coords):
+            if t[0].collides_with_point(self.mouse_coords):
                 if self.selected_tower:
-                    self.selected_tower.selected = False
-                t.selected = True
+                    self.set_selected_tower(False)
                 self.selected_tower = t
+                self.set_selected_tower(True)
                 return
-            t.selected = False
+            self.set_selected_tower(False)
 
+
+    def set_selected_tower(self, val):
+        if self.selected_tower:
+            self.selected_tower[0].selected = val
+            if len(self.selected_tower) > 1:
+                self.selected_tower[1].selected = val
 
     def on_mouse_motion(self, x: float, y: float, dx: float, dy: float):
         self.mouse_coords = (x, y)
