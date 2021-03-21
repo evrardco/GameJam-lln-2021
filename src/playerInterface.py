@@ -19,14 +19,15 @@ class TowerButton(arcade.gui.UIFlatButton):
 
     def on_click(self):
         selected_t = self.game_level.selected_tower
-        new_t = None
-        if self.text == "Redneck":
-            new_t = Redneck(self.game_level, center_x=selected_t[0].center_x, center_y=selected_t[0].center_y)
-        else:
-            return
-        selected_t.append(new_t)
+        if len(selected_t) < 2:
+            new_t = None
+            if self.text == "Redneck":
+                new_t = Redneck(self.game_level, center_x=selected_t[0].center_x, center_y=selected_t[0].center_y)
+                new_t.selected = True
+            else:
+                return
+            selected_t.append(new_t)
         self.game_level.selected_tower[1].lvl_up()
-
 
 
 class PlayerInterface():

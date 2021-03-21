@@ -4,11 +4,11 @@ from src.entities.towers.tower import Tower
 from os.path import join
 
 class Projectile(Sprite):
-    def __init__(self, target, projectile_list, *args, **kwargs):
+    def __init__(self, target, tower, *args, **kwargs):
         super().__init__(join("assets", "sprite.jpg"), *args, **kwargs, scale=0.5)
-        self.dmg = 1
+        self.dmg = tower.dmg
         self.target = target
-        self.projectile_list = projectile_list
+        self.projectile_list = tower.projectiles
         self.speed = 250
 
     def on_update(self, delta_time: float):
@@ -35,6 +35,7 @@ class Redneck(Tower):
         self.cost = 2
         self.projectiles = []
         self.name = "Redneck"
+        self.max_lvl = 5
 
     def draw(self):
         for p in self.projectiles:
@@ -48,8 +49,16 @@ class Redneck(Tower):
         return super().on_update(delta_time)
 
     def fire(self, targets):
-        self.projectiles.append(Projectile(targets[0], self.projectiles, center_x=self.center_x, center_y = self.center_y))
+        self.projectiles.append(Projectile(targets[len(targets) - 1], self, center_x=self.center_x, center_y = self.center_y))
         return super().fire(targets)
 
     def lvl_up(self):
-        return super().lvl_up()
+        if not super().lvl_up():
+            return False
+        
+        self.cost += self.lvl * 0.5
+        self.dmg += self.lvl
+        self.fire_rate += self.lvl * 0.5
+        self.range += 5
+        
+        return True
