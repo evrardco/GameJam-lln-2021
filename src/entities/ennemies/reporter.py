@@ -1,19 +1,19 @@
 from arcade import load_spritesheet
 from os.path import join
 from src.entities.ennemies.base_enemy import BaseEnemy
-textures = load_spritesheet(join("assets", "entities", "ennemies", "bearer.png"), 64, 64, 2, 4)
-texture_delay = 0.1
+textures = load_spritesheet(join("assets", "entities", "ennemies", "reporter.png"), 64, 64, 2, 4)
+texture_delay = 0.15
 
-class Bearer(BaseEnemy):
+class Reporter(BaseEnemy):
     def __init__(self, game_level, *args, **kwargs):
         super().__init__(game_level, *args, **kwargs)
         self.texture_index = 0
         self.texture = textures[self.texture_index]
         self.texture_time = texture_delay
-        self.speed = 80
+        self.speed = 60
         self.scale = 0.5
-        self.dmg = 1        
-        self.health = 2
+        self.dmg = 5
+        self.health = 3
         self.reward = 1
 
     
