@@ -4,10 +4,10 @@ from src.globals import HEIGHT
 
 
 class ObjectParser:
-    def __init__(self, name):
+    def __init__(self, id):
         self.root = None
         
-        with open(join("assets", "maps", f"{name}.json"), "r") as f:
+        with open(join("assets", "maps", f"level_{id}.json"), "r") as f:
             self.root = json.load(f)
         for l in self.root["layers"]:
             if l["name"] == "path_finding":

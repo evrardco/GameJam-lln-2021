@@ -2,7 +2,6 @@ import arcade
 from arcade.gui.ui_style import UIStyle
 
 from src.menu import Menu
-from src.level import Level
 from src.globals import *
 
 
@@ -16,5 +15,5 @@ if __name__ == "__main__":
     )
 
     window = arcade.Window(title='Democracy defender', height=HEIGHT, width=WIDTH)
-    window.show_view(Level("level_1"))
+    window.show_view(Menu())
     arcade.run()

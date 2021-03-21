@@ -13,11 +13,11 @@ from src.wave_manager import WaveManager
 class Level(arcade.View):
     """
     Main view. Really the only view in this example. """
-    def __init__(self, name):
+    def __init__(self, id):
         super().__init__()
 
         self.ui_manager = UIManager()
-        self.name = name
+        self.id = id
 
         self.mouse_coords = (-1, -1)
 
@@ -61,9 +61,9 @@ class Level(arcade.View):
         """ Set up this view. """
         self.ui_manager.purge_ui_elements()
 
-        tilemap = arcade.tilemap.read_tmx(join("assets", "maps", f"{self.name}.tmx"))
+        tilemap = arcade.tilemap.read_tmx(join("assets", "maps", f"level_{self.id}.tmx"))
         self.map = arcade.tilemap.process_layer(tilemap, 'Calque de Tuiles 1')
-        oparser = ObjectParser(self.name)
+        oparser = ObjectParser(self.id)
         
         self.path = oparser.path_finding
 
@@ -120,6 +120,6 @@ class Level(arcade.View):
 
     def next_level(self):
         if self.wave_manager.level_done:
-            self.window.show_view(Level("level_2"))
+            self.window.show_view(Level(self.id + 1))
         else:
             print(f"You must finish this level!")

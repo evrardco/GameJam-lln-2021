@@ -45,6 +45,7 @@ class Police(Tower):
         self.texture_index = 0
         self.texture = textures[self.texture_index]
         self.texture_time = texture_delay
+        self.fire_rate = 1
 
     def draw(self):
         for p in self.projectiles:

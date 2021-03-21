@@ -10,7 +10,7 @@ class MyFlatButton(arcade.gui.UIFlatButton):
         self.window = window
 
     def on_click(self):
-        self.window.show_view(Level(self.text))
+        self.window.show_view(Level(1))
 
 
 class Menu(arcade.View):
@@ -46,7 +46,7 @@ class Menu(arcade.View):
 
         button = MyFlatButton(
             self.window,
-            'level_1',
+            'Play',
             center_x=self.window.width // 2,
             center_y=y_slot * 2,
             width=250,
