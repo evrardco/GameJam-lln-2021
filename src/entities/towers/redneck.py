@@ -1,7 +1,10 @@
 from arcade import Sprite
 from numpy.linalg import norm
 from src.entities.towers.tower import Tower
+from arcade import load_spritesheet
 from os.path import join
+textures = load_spritesheet(join("assets", "entities", "towers", "redneck.png"), 32, 32, 1, 2)
+texture_delay = 0.1
 
 class Projectile(Sprite):
     def __init__(self, target, tower, *args, **kwargs):
@@ -37,12 +40,22 @@ class Redneck(Tower):
         self.name = "Redneck"
         self.max_lvl = 5
 
+        self.texture_index = 0
+        self.texture = textures[self.texture_index]
+        self.texture_time = texture_delay
+
     def draw(self):
         for p in self.projectiles:
             p.draw()
         return super().draw()
 
     def on_update(self, delta_time: float):
+        self.texture_time -= delta_time
+        if self.texture_time <= 0:
+            self.texture_index = (self.texture_index + 1) % len(textures)
+            self.texture = textures[self.texture_index]
+            self.texture_time = texture_delay
+
         for p in self.projectiles:
             p.on_update(delta_time)
 
@@ -60,5 +73,5 @@ class Redneck(Tower):
         self.dmg += self.lvl
         self.fire_rate += self.lvl * 0.5
         self.range += 5
-        
+
         return True
