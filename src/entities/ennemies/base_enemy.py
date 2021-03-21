@@ -7,6 +7,7 @@ class BaseEnemy(Sprite):
     def __init__(self, game_level, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.speed = 300
+        self.slow_elapsed = 0
         self.path = game_level.path.copy()
         self.curr_goal = self.path.pop(0)
         self.center_x, self.center_y = self.curr_goal["x"], self.curr_goal["y"]
@@ -33,12 +34,17 @@ class BaseEnemy(Sprite):
             self.game_level.set_followers(self.game_level.followers + self.reward)
             self.enemies.remove(self)
 
-        self.center_x += self.vel_x * self.speed * delta_time
-        self.center_y += self.vel_y * self.speed * delta_time
+        speed = self.speed
+        if self.slow_elapsed < 2:
+            self.slow_elapsed += delta_time
+            speed *= 0.5
+
+        self.center_x += self.vel_x * speed * delta_time
+        self.center_y += self.vel_y * speed * delta_time
 
         nx, ny = self.curr_goal["x"], self.curr_goal["y"]
         dist = abs(self.center_x - nx) + abs(self.center_y - ny)
-        if dist <= 2 * self.speed * delta_time:
+        if dist <= 2 * speed * delta_time:
             if not self.path:
                 self.enemies.remove(self)
                 self.game_level.set_votes(self.game_level.votes + self.dmg)
@@ -69,3 +75,6 @@ class BaseEnemy(Sprite):
             raise(Exception(f"Unrecognized direction {dir}"))
         self.vel_x, self.vel_y = x, y
         self.dir = dir
+
+    def slow(self):
+        self.slow_elapsed = 0
