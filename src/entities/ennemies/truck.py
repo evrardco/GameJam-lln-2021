@@ -1,8 +1,8 @@
 from arcade.sprite import Sprite
-from src.entities.ennemies.base_enemy import BaseEnnemy
+from src.entities.ennemies.base_enemy import BaseEnemy
 from os.path import join
 from math import pi
-class Truck(BaseEnnemy):
+class Truck(BaseEnemy):
     def __init__(self, *args, **kwargs):
         super().__init__(
                             *args, **kwargs,

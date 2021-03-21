@@ -41,7 +41,7 @@ class Tower(Sprite):
         pass
 
     def lvl_up(self):
-        if self.game_level.followers < self.cost or self.lvl > self.max_lvl:
+        if self.game_level.followers < self.cost or self.lvl + 1 > self.max_lvl:
             return
         self.lvl += 1
         if self.lvl == 1:
