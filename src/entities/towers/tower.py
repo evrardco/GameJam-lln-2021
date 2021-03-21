@@ -15,7 +15,7 @@ class Tower(Sprite):
         self.enemies = self.game_level.enemy_list
         self.id = Tower.id_counter
         self._elapsed_fire = self.fire_rate
-        self.cost = 10
+        self.cost = 1
         Tower.id_counter += 1
 
     def on_update(self, delta_time: float):
