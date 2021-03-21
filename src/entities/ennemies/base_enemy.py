@@ -1,3 +1,4 @@
+import arcade
 from arcade.sprite import Sprite
 from src.helpers import total_rotational_increment
 
@@ -11,12 +12,17 @@ class BaseEnemy(Sprite):
         self.center_x, self.center_y = self.curr_goal["x"], self.curr_goal["y"]
         self.update_vel(self.curr_goal["turn_dir"])
         self.curr_goal = self.path.pop(0)
-        self.health = 10
+        self.max_health = 10
+        self.health = self.max_health
         self.game_level = game_level
         self.enemies = game_level.enemy_list
         self.dmg = 1
         self.reward = 1
 
+    def draw(self):
+        super().draw()
+        arcade.draw_rectangle_filled(self.center_x, self.center_y, (self.health / self.max_health) * 50, 2, arcade.color.RED)
+        # print((self.health / self.max_health) * 50)
     
     def on_update(self, delta_time):
         if delta_time > 1:

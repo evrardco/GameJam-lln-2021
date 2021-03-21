@@ -13,7 +13,8 @@ class Reporter(BaseEnemy):
         self.speed = 60
         self.scale = 0.5
         self.dmg = 5
-        self.health = 3
+        self.max_health = 3
+        self.health = self.max_health
         self.reward = 1
 
     

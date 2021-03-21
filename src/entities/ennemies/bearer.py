@@ -12,8 +12,9 @@ class Bearer(BaseEnemy):
         self.texture_time = texture_delay
         self.speed = 80
         self.scale = 0.5
-        self.dmg = 1        
+        self.dmg = 1
         self.health = 2
+        self.max_health = self.health
         self.reward = 1
 
     
