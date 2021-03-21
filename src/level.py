@@ -1,3 +1,4 @@
+from src.globals import GAME_WIDTH
 from src.entities.towers.tower_spot import TowerSpot
 from src.entities.ennemies.truck import Truck
 import arcade
@@ -88,6 +89,9 @@ class Level(arcade.View):
 
 
     def on_mouse_press(self, x: float, y: float, button: int, modifiers: int):
+        if x > GAME_WIDTH:
+            return
+
         for t in self.tower_list:
             if t[0].collides_with_point(self.mouse_coords):
                 if self.selected_tower:

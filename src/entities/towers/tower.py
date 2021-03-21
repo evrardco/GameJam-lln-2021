@@ -15,6 +15,7 @@ class Tower(Sprite):
         self.selected = False
         self._elapsed_fire = self.fire_rate
         self.cost = 1
+        self.dmg = 1
         self.name = "Tower"
         Tower.id_counter += 1
 
@@ -48,9 +49,10 @@ class Tower(Sprite):
 
     def lvl_up(self):
         if self.game_level.followers < self.cost or self.lvl + 1 > self.max_lvl:
-            return
+            return False
         self.lvl += 1
         self.game_level.set_followers(self.game_level.followers - self.cost)
+        return True
 
 
 Tower.id_counter = 0
