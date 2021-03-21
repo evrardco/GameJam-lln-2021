@@ -28,7 +28,8 @@ class Tower(Sprite):
             draw_rectangle_outline(self.center_x, self.center_y, 32, 32, color.RED, 4)
 
     def on_update(self, delta_time: float):
-        if self.lvl > 0 and (targets := self.targets_in_range()) and self._elapsed_fire >= self.fire_rate:
+        targets = self.targets_in_range()
+        if self.lvl > 0 and targets and self._elapsed_fire >= self.fire_rate:
             self.fire(targets)
             self._elapsed_fire = 0
         

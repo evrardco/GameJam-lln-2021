@@ -22,7 +22,7 @@ class WaveManager:
         self.timer = 0
     
     def on_update(self, delta_time: float):
-        print(self.timer)
+        # print(self.timer)
         if self.level_done:
             return
 
