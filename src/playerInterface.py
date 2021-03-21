@@ -18,41 +18,43 @@ class TowerButton(arcade.gui.UIFlatButton):
 
 
 class PlayerInterface():
-    def __init__(self, ui_manager):
+    def __init__(self, game_level):
         super().__init__()
-        self.ui_manager = ui_manager
+        self.game_level = game_level
     
-        self.ui_manager.add_ui_element(arcade.gui.UILabel(
+        self.game_level.ui_manager.add_ui_element(arcade.gui.UILabel(
             "Followers:",
             center_x=GAME_WIDTH + 100,
             center_y=700,
             width=200,
         ))
-        
-        self.ui_manager.add_ui_element(arcade.gui.UILabel(
+
+        self.ui_followers = arcade.gui.UILabel(
+            f"{self.game_level.followers}",
+            center_x=GAME_WIDTH + 100,
+            center_y=650,
+            width=200,
+            height=25
+        )
+        self.game_level.ui_manager.add_ui_element(self.ui_followers)
+
+        self.game_level.ui_manager.add_ui_element(arcade.gui.UILabel(
             "Votes counted:",
             center_x=GAME_WIDTH + 100,
             width=200,
             center_y=600
         ))
 
-        self.ui_manager.add_ui_element(arcade.gui.UILabel(
-            "1000",
-            center_x=GAME_WIDTH + 100,
-            center_y=650,
-            width=200,
-            height=25
-        ))
-
-        self.ui_manager.add_ui_element(arcade.gui.UILabel(
-            "2000",
+        self.ui_votes = arcade.gui.UILabel(
+            f"{self.game_level.votes}/{self.game_level.max_votes}",
             center_x=GAME_WIDTH + 100,
             center_y=550,
             width=200,
             height=25
-        ))
+        )
+        self.game_level.ui_manager.add_ui_element(self.ui_votes)
 
-        self.ui_manager.add_ui_element(arcade.gui.UILabel(
+        self.game_level.ui_manager.add_ui_element(arcade.gui.UILabel(
             "Buildings:",
             center_x=GAME_WIDTH + 100,
             center_y=300,
@@ -69,7 +71,7 @@ class PlayerInterface():
             height=50
         )
 
-        self.ui_manager.add_ui_element(waveButton)
+        self.game_level.ui_manager.add_ui_element(waveButton)
 
         towerButton1 = TowerButton(
             'Tower type 1',
@@ -79,7 +81,7 @@ class PlayerInterface():
             height=50
         )
 
-        self.ui_manager.add_ui_element(towerButton1)
+        self.game_level.ui_manager.add_ui_element(towerButton1)
 
         towerButton2 = TowerButton(
             'Tower type 2',
@@ -89,7 +91,7 @@ class PlayerInterface():
             height=50
         )
 
-        self.ui_manager.add_ui_element(towerButton2)
+        self.game_level.ui_manager.add_ui_element(towerButton2)
 
         towerButton3 = TowerButton(
             'Tower type 3',
@@ -99,6 +101,11 @@ class PlayerInterface():
             height=50
         )
 
-        self.ui_manager.add_ui_element(towerButton3)
+        self.game_level.ui_manager.add_ui_element(towerButton3)
 
+    def update_votes(self):
+        self.ui_votes.text = f"{self.game_level.votes}/{self.game_level.max_votes}"
+
+    def update_followers(self):    
+        self.ui_followers.text = f"{self.game_level.followers}"
     

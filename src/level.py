@@ -39,6 +39,10 @@ class Level(arcade.View):
         for t in self.tower_list:
             t.on_update(delta_time)
 
+        if self.votes >= self.max_votes:
+            print("GAME OVER")
+            exit(0)
+
         return super().on_update(delta_time)
 
     def on_show_view(self):
@@ -53,33 +57,25 @@ class Level(arcade.View):
         """ Set up this view. """
         self.ui_manager.purge_ui_elements()
 
-        y_slot = self.window.height // 4
-
-        # left side elements
-        self.ui_manager.add_ui_element(arcade.gui.UILabel(
-            self.name,
-            center_x=self.window.width // 2,
-            center_y=y_slot * 3,
-            id="label"
-        ))
-
         tilemap = arcade.tilemap.read_tmx(join("assets", "maps", f"{self.name}.tmx"))
         self.map = arcade.tilemap.process_layer(tilemap, 'Calque de Tuiles 1')
         oparser = ObjectParser(self.name)
         self.path = oparser.path_finding
 
-        self.health = 20
+        self.max_votes = 20
+        self.votes = 0
+        self.followers = 500
 
         self.enemy_list = []
-        self.enemy_list.append(Truck(self.path, self.enemy_list))
+        self.enemy_list.append(Truck(self))
 
         self.projectile_list = []
 
         self.tower_list = []
         for p in oparser.tower_spots:
-            self.tower_list.append(Redneck(self.enemy_list, center_x=p["x"], center_y=self.window.height - p["y"]))
+            self.tower_list.append(Redneck(self, center_x=p["x"], center_y=self.window.height - p["y"]))
 
-        self.interface = PlayerInterface(self.ui_manager)
+        self.interface = PlayerInterface(self)
         
     
     def on_mouse_press(self, x: float, y: float, button: int, modifiers: int):
@@ -89,3 +85,11 @@ class Level(arcade.View):
 
     def on_mouse_motion(self, x: float, y: float, dx: float, dy: float):
         self.mouse_coords = (x, y)
+
+    def set_votes(self, val):
+        self.votes = val
+        self.interface.update_votes()
+
+    def set_followers(self, val):
+        self.followers = val
+        self.interface.update_followers()

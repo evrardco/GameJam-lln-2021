@@ -4,15 +4,18 @@ from arcade import load_texture
 
 
 class Tower(Sprite):
-    def __init__(self, enemies, true_texture, *args, **kwargs):
+    def __init__(self, game_level, true_texture, *args, **kwargs):
         super().__init__(join("assets", "empty.jpg"), *args, **kwargs)
         self.range = 100
+        self.max_lvl = 1
         self.lvl = 0
         self.true_texture = load_texture(true_texture)
         self.fire_rate = 1  # fire per ms
-        self.enemies = enemies
+        self.game_level =game_level
+        self.enemies = self.game_level.enemy_list
         self.id = Tower.id_counter
         self._elapsed_fire = self.fire_rate
+        self.cost = 10
         Tower.id_counter += 1
 
     def on_update(self, delta_time: float):
@@ -34,12 +37,16 @@ class Tower(Sprite):
 
 
     def fire(self, targets):
-        pass
         # print(f"[Tower {self.id}] {len(targets)} enemies in range")
+        pass
 
     def lvl_up(self):
+        if self.game_level.followers < self.cost or self.lvl > self.max_lvl:
+            return
         self.lvl += 1
-        self.texture = self.true_texture
+        if self.lvl == 1:
+            self.texture = self.true_texture
+        self.game_level.set_followers(self.game_level.followers - self.cost)
     
 
 Tower.id_counter = 0
