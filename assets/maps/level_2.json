@@ -101,7 +101,7 @@
                 {
                  "height":0,
                  "id":5,
-                 "name":"7",
+                 "name":"5",
                  "point":true,
                  "properties":[
                         {
@@ -133,42 +133,6 @@
                  "width":0,
                  "x":400,
                  "y":0
-                }, 
-                {
-                 "height":0,
-                 "id":7,
-                 "name":"5",
-                 "point":true,
-                 "properties":[
-                        {
-                         "name":"turn_dir",
-                         "type":"string",
-                         "value":"up"
-                        }],
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":0,
-                 "x":48,
-                 "y":560
-                }, 
-                {
-                 "height":0,
-                 "id":8,
-                 "name":"6",
-                 "point":true,
-                 "properties":[
-                        {
-                         "name":"turn_dir",
-                         "type":"string",
-                         "value":"right"
-                        }],
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":0,
-                 "x":48,
-                 "y":272
                 }],
          "opacity":1,
          "type":"objectgroup",
