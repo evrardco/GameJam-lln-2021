@@ -13,7 +13,7 @@ class Bearer(BaseEnemy):
         self.speed = 80
         self.scale = 0.5
         self.health = 3
-        self.reward = 0.5
+        self.reward = 1
 
     
     def on_update(self, delta_time):
