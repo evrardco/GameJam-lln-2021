@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.4" tiledversion="1.4.3" orientation="orthogonal" renderorder="right-down" width="50" height="50" tilewidth="16" tileheight="16" infinite="0" nextlayerid="5" nextobjectid="61">
+<map version="1.4" tiledversion="1.4.3" orientation="orthogonal" renderorder="right-down" width="50" height="50" tilewidth="16" tileheight="16" infinite="0" nextlayerid="6" nextobjectid="62">
  <editorsettings>
   <export target="level_1.tmx" format="tmx"/>
  </editorsettings>
@@ -345,6 +345,14 @@
 964,715,795,796,715,964,964,964,964,964,964,964,964,964,964,964,964,964,964,964,964,964,964,964,964,964,964,964,964,964,964,964,964,964,964,964,964,964,964,964,964,964,964,964,964,964,964,964,964,964
 </data>
  </layer>
+ <objectgroup id="5" name="waves">
+  <object id="61" name="wave_1" x="13.6875" y="828.5" width="120.625" height="19">
+   <properties>
+    <property name="json" value="{&quot;num&quot;: &quot;1&quot;, &quot;enemies&quot;:[{&quot;truck&quot;: &quot;10&quot;}, {&quot;truck&quot;: &quot;5&quot;}]}"/>
+   </properties>
+   <text wrap="1">wave_1</text>
+  </object>
+ </objectgroup>
  <objectgroup id="4" name="tower_spots">
   <object id="26" x="96" y="640">
    <point/>

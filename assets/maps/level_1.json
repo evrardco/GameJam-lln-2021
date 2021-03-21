@@ -23,6 +23,17 @@
         }, 
         {
          "draworder":"topdown",
+         "id":5,
+         "name":"waves",
+         "objects":[],
+         "opacity":1,
+         "type":"objectgroup",
+         "visible":true,
+         "x":0,
+         "y":0
+        }, 
+        {
+         "draworder":"topdown",
          "id":4,
          "name":"tower_spots",
          "objects":[
@@ -400,13 +411,13 @@
                 {
                  "height":0,
                  "id":6,
-                 "name":"2",
+                 "name":"1",
                  "point":true,
                  "properties":[
                         {
                          "name":"turn_dir",
                          "type":"string",
-                         "value":"right"
+                         "value":"\"right\""
                         }],
                  "rotation":0,
                  "type":"",
@@ -418,7 +429,7 @@
                 {
                  "height":0,
                  "id":7,
-                 "name":"3",
+                 "name":"2",
                  "point":true,
                  "properties":[
                         {
@@ -436,7 +447,7 @@
                 {
                  "height":0,
                  "id":9,
-                 "name":"4",
+                 "name":"3",
                  "point":true,
                  "properties":[
                         {
@@ -454,7 +465,7 @@
                 {
                  "height":0,
                  "id":10,
-                 "name":"5",
+                 "name":"4",
                  "point":true,
                  "properties":[
                         {
@@ -472,7 +483,7 @@
                 {
                  "height":0,
                  "id":11,
-                 "name":"6",
+                 "name":"5",
                  "point":true,
                  "properties":[
                         {
@@ -490,7 +501,7 @@
                 {
                  "height":0,
                  "id":13,
-                 "name":"7",
+                 "name":"6",
                  "point":true,
                  "properties":[
                         {
@@ -508,7 +519,7 @@
                 {
                  "height":0,
                  "id":14,
-                 "name":"8",
+                 "name":"7",
                  "point":true,
                  "properties":[
                         {
@@ -526,7 +537,7 @@
                 {
                  "height":0,
                  "id":16,
-                 "name":"9",
+                 "name":"8",
                  "point":true,
                  "properties":[
                         {
@@ -544,7 +555,7 @@
                 {
                  "height":0,
                  "id":17,
-                 "name":"10",
+                 "name":"9",
                  "point":true,
                  "properties":[
                         {
@@ -562,7 +573,7 @@
                 {
                  "height":0,
                  "id":18,
-                 "name":"11",
+                 "name":"10",
                  "point":true,
                  "properties":[
                         {
@@ -580,13 +591,13 @@
                 {
                  "height":0,
                  "id":20,
-                 "name":"12",
+                 "name":"11",
                  "point":true,
                  "properties":[
                         {
                          "name":"turn_dir",
                          "type":"string",
-                         "value":"nil"
+                         "value":"\"nil\""
                         }],
                  "rotation":0,
                  "type":"",
@@ -598,7 +609,7 @@
                 {
                  "height":0,
                  "id":60,
-                 "name":"1",
+                 "name":"0",
                  "point":true,
                  "properties":[
                         {
@@ -647,6 +658,50 @@
                  "width":0,
                  "x":720,
                  "y":0
+                }, 
+                {
+                 "height":19,
+                 "id":63,
+                 "name":"waves",
+                 "properties":[
+                        {
+                         "name":"json",
+                         "type":"string",
+                         "value":"{\"num\": \"1\", \"dt\":\"10\", \"enemies\":[{\"truck\": \"10\"}, {\"truck\": \"5\"}]}"
+                        }],
+                 "rotation":0,
+                 "text":
+                    {
+                     "text":"waves",
+                     "wrap":true
+                    },
+                 "type":"",
+                 "visible":true,
+                 "width":120.625,
+                 "x":867.6875,
+                 "y":14.5000000000001
+                }, 
+                {
+                 "height":19,
+                 "id":64,
+                 "name":"game_values",
+                 "properties":[
+                        {
+                         "name":"json",
+                         "type":"string",
+                         "value":"{\"max_votes\": \"30\", \"followers\": \"10\"}"
+                        }],
+                 "rotation":0,
+                 "text":
+                    {
+                     "text":"game_values",
+                     "wrap":true
+                    },
+                 "type":"",
+                 "visible":true,
+                 "width":120.625,
+                 "x":844.354166666667,
+                 "y":45.1666666666667
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -654,8 +709,8 @@
          "x":0,
          "y":0
         }],
- "nextlayerid":5,
- "nextobjectid":61,
+ "nextlayerid":6,
+ "nextobjectid":66,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.4.3",

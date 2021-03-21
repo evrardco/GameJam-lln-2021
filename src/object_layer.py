@@ -20,6 +20,13 @@ class ObjectParser:
                 self.path_finding = sorted(objects, key=lambda x: int(x["name"]))
                 # print(self.path_finding)
                 
-            if l["name"] == "tower_spots":
+            elif l["name"] == "tower_spots":
                 self.tower_spots = l["objects"]
+
+            elif l["name"] == "waves":
+                for o in l["objects"]:
+                    for p in o["properties"]:
+                        if p["name"] == "json":
+                            self.waves = json.loads(p)
+
 
