@@ -12,8 +12,8 @@ class Reporter(BaseEnemy):
         self.texture_time = texture_delay
         self.speed = 60
         self.scale = 0.5
-        self.dmg = 5
-        self.health = 3
+        self.dmg = 8
+        self.health = 8
         self.reward = 1
 
     
