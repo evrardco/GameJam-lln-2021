@@ -34,6 +34,7 @@ class Redneck(Tower):
 
         self.cost = 2
         self.projectiles = []
+        self.name = "Redneck"
 
     def draw(self):
         for p in self.projectiles:

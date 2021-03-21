@@ -75,14 +75,21 @@ class Level(arcade.View):
         self.votes = 0
         self.followers = oparser.followers
 
-
         self.interface = PlayerInterface(self)
+
+        self.selected_tower = None
         
     
     def on_mouse_press(self, x: float, y: float, button: int, modifiers: int):
         for t in self.tower_list:
             if t.collides_with_point(self.mouse_coords):
-                t.lvl_up()
+                if self.selected_tower:
+                    self.selected_tower.selected = False
+                t.selected = True
+                self.selected_tower = t
+                return
+            t.selected = False
+
 
     def on_mouse_motion(self, x: float, y: float, dx: float, dy: float):
         self.mouse_coords = (x, y)

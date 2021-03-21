@@ -1,6 +1,8 @@
 from os.path import join
 from arcade import Sprite
 from arcade import load_texture
+from arcade import draw_rectangle_outline
+from arcade import color
 
 
 class Tower(Sprite):
@@ -14,9 +16,16 @@ class Tower(Sprite):
         self.game_level =game_level
         self.enemies = self.game_level.enemy_list
         self.id = Tower.id_counter
+        self.selected = False
         self._elapsed_fire = self.fire_rate
         self.cost = 1
+        self.name = "Tower"
         Tower.id_counter += 1
+
+    def draw(self):
+        super().draw()
+        if self.selected:
+            draw_rectangle_outline(self.center_x, self.center_y, 32, 32, color.RED, 4)
 
     def on_update(self, delta_time: float):
         if self.lvl > 0 and (targets := self.targets_in_range()) and self._elapsed_fire >= self.fire_rate:
@@ -47,6 +56,6 @@ class Tower(Sprite):
         if self.lvl == 1:
             self.texture = self.true_texture
         self.game_level.set_followers(self.game_level.followers - self.cost)
-    
+
 
 Tower.id_counter = 0

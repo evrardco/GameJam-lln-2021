@@ -1,6 +1,8 @@
 import arcade
 import arcade.gui
 from src.globals import GAME_WIDTH
+from src.entities.towers.redneck import Redneck
+
 
 class WaveButton(arcade.gui.UIFlatButton):
     def __init__(self, *args, **kwargs):
@@ -10,11 +12,18 @@ class WaveButton(arcade.gui.UIFlatButton):
         print("Next Wave is starting !")
 
 class TowerButton(arcade.gui.UIFlatButton):
-    def __init__(self, *args, **kwargs):
+    def __init__(self, game_level, *args, **kwargs):
         super().__init__(*args, **kwargs)
+        self.game_level = game_level
 
     def on_click(self):
-        print("Tower type selected !")
+        # if self.game_level.selected_tower.lvl == 0:
+        #     new_t = Redneck(self.game_level, center_x=self.center_x, center_y=self.center_y)
+        #     self.game_level.tower_list = [new_t if i == self.game_level.selected_tower else i for i in self.game_level.tower_list]
+        #     self.game_level.selected_tower = new_t
+
+        # self.game_level.selected_tower.lvl_up()
+        pass
 
 
 class PlayerInterface():
@@ -74,7 +83,8 @@ class PlayerInterface():
         self.game_level.ui_manager.add_ui_element(waveButton)
 
         towerButton1 = TowerButton(
-            'Tower type 1',
+            self.game_level,
+            'Redneck',
             center_x=GAME_WIDTH + 100,
             center_y=250,
             width=200,
@@ -84,6 +94,7 @@ class PlayerInterface():
         self.game_level.ui_manager.add_ui_element(towerButton1)
 
         towerButton2 = TowerButton(
+            self.game_level,
             'Tower type 2',
             center_x=GAME_WIDTH + 100,
             center_y=200,
@@ -94,6 +105,7 @@ class PlayerInterface():
         self.game_level.ui_manager.add_ui_element(towerButton2)
 
         towerButton3 = TowerButton(
+            self.game_level,
             'Tower type 3',
             center_x=GAME_WIDTH + 100,
             center_y=150,
