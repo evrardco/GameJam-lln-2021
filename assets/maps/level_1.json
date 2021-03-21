@@ -667,7 +667,7 @@
                         {
                          "name":"json",
                          "type":"string",
-                         "value":"{\"num\": \"1\", \"dt\":\"10\", \"enemies\":[{\"truck\": \"10\"}, {\"truck\": \"5\"}]}"
+                         "value":"{\"num\": \"1\", \"dt\":\"2\", \"enemies\":[{\"truck\": \"10\"}, {\"truck\": \"5\"}]}"
                         }],
                  "rotation":0,
                  "text":

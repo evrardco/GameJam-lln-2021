@@ -28,7 +28,7 @@ class ObjectParser:
             elif l["name"] == "game_info":
                 self.waves = []
                 for o in l["objects"]:
-                    if o["name"].beginswith("wave_"):
+                    if o["name"].startswith("wave_"):
 
                         for p in o["properties"]:
                             if p["name"] == "json":
@@ -40,4 +40,5 @@ class ObjectParser:
                                 temp = json.loads(p["value"])
                                 self.followers = int(temp["followers"])
                                 self.max_votes = int(temp["max_votes"])
+                                self.pause_time = float(temp["pause_time"])
                 

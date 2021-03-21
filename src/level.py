@@ -8,6 +8,7 @@ from os.path import join
 from src.object_layer import ObjectParser
 from src.entities.towers.redneck import Redneck
 from src.playerInterface import PlayerInterface
+from src.wave_manager import WaveManager
 
 class Level(arcade.View):
     """
@@ -33,6 +34,7 @@ class Level(arcade.View):
             e.draw()
 
     def on_update(self, delta_time: float):
+        self.wave_manager.on_update(delta_time)
         for e in self.enemy_list:
             e.on_update(delta_time)
 
@@ -60,6 +62,7 @@ class Level(arcade.View):
         tilemap = arcade.tilemap.read_tmx(join("assets", "maps", f"{self.name}.tmx"))
         self.map = arcade.tilemap.process_layer(tilemap, 'Calque de Tuiles 1')
         oparser = ObjectParser(self.name)
+        
         self.path = oparser.path_finding
 
         self.enemy_list = []
@@ -74,8 +77,9 @@ class Level(arcade.View):
         self.max_votes = oparser.max_votes
         self.votes = 0
         self.followers = oparser.followers
+        self.pause_time = oparser.pause_time
 
-
+        self.wave_manager = WaveManager(self, oparser.waves)
         self.interface = PlayerInterface(self)
         
     
