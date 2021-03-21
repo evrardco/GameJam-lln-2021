@@ -62,10 +62,6 @@ class Level(arcade.View):
         oparser = ObjectParser(self.name)
         self.path = oparser.path_finding
 
-        self.max_votes = 20
-        self.votes = 0
-        self.followers = 500
-
         self.enemy_list = []
         self.enemy_list.append(Truck(self))
 
@@ -74,6 +70,11 @@ class Level(arcade.View):
         self.tower_list = []
         for p in oparser.tower_spots:
             self.tower_list.append(Redneck(self, center_x=p["x"], center_y=self.window.height - p["y"]))
+        
+        self.max_votes = oparser.max_votes
+        self.votes = 0
+        self.followers = oparser.followers
+
 
         self.interface = PlayerInterface(self)
         

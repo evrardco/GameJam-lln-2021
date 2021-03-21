@@ -2,7 +2,7 @@ from arcade.sprite import Sprite
 from src.helpers import total_rotational_increment
 
 
-class BaseEnnemy(Sprite):
+class BaseEnemy(Sprite):
     def __init__(self, game_level, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.speed = 300

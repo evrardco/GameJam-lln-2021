@@ -24,13 +24,20 @@ class ObjectParser:
             elif l["name"] == "tower_spots":
                 self.tower_spots = l["objects"]
 
+
             elif l["name"] == "game_info":
                 self.waves = []
                 for o in l["objects"]:
                     if o["name"].beginswith("wave_"):
+
                         for p in o["properties"]:
                             if p["name"] == "json":
-                                self.waves.append(json.loads(p))
-                                
+                                self.waves.append(json.loads(p["value"]))
 
-
+                    elif o["name"] == "game_values":
+                        for p in o["properties"]:
+                            if p["name"] == "json":
+                                temp = json.loads(p["value"])
+                                self.followers = int(temp["followers"])
+                                self.max_votes = int(temp["max_votes"])
+                
