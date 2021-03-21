@@ -417,7 +417,7 @@
                         {
                          "name":"turn_dir",
                          "type":"string",
-                         "value":"\"right\""
+                         "value":"right"
                         }],
                  "rotation":0,
                  "type":"",
@@ -597,7 +597,7 @@
                         {
                          "name":"turn_dir",
                          "type":"string",
-                         "value":"\"nil\""
+                         "value":"nil"
                         }],
                  "rotation":0,
                  "type":"",
