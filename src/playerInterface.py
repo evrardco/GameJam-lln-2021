@@ -35,7 +35,8 @@ class TowerButton(arcade.gui.UIFlatButton):
                 return
             new_t.selected = True
             selected_t.append(new_t)
-        self.game_level.selected_tower[1].lvl_up()
+        elif selected_t[1].name == self.text:
+            self.game_level.selected_tower[1].lvl_up()
 
 
 class PlayerInterface():
