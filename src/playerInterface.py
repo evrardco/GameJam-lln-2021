@@ -1,16 +1,16 @@
 import arcade
 import arcade.gui
-from src.entities.towers.tower_spot import TowerSpot
 from src.globals import GAME_WIDTH
 from src.entities.towers.redneck import Redneck
 
 
 class WaveButton(arcade.gui.UIFlatButton):
-    def __init__(self, *args, **kwargs):
+    def __init__(self, game_level, *args, **kwargs):
         super().__init__(*args, **kwargs)
+        self.game_level = game_level
 
     def on_click(self):
-        print("Next Wave is starting !")
+        self.game_level.next_level()
 
 class TowerButton(arcade.gui.UIFlatButton):
     def __init__(self, game_level, *args, **kwargs):
@@ -77,7 +77,8 @@ class PlayerInterface():
 
 
         waveButton = WaveButton(
-            'Next Wave',
+            self.game_level,
+            'Next level',
             center_x=GAME_WIDTH + 100,
             center_y=50,
             width=200,

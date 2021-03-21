@@ -118,3 +118,9 @@ class Level(arcade.View):
     def set_followers(self, val):
         self.followers = val
         self.interface.update_followers()
+
+    def next_level(self):
+        if self.wave_manager.level_done:
+            self.window.show_view(Level("level_2"))
+        else:
+            print(f"You must finish this level!")
