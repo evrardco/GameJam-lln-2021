@@ -15,6 +15,7 @@ class Projectile(Sprite):
         self.target = target
         self.projectile_list = tower.projectiles
         self.speed = 250
+        
 
     def on_update(self, delta_time: float):
         vel_x = (self.center_x - self.target.center_x) * delta_time
@@ -37,7 +38,7 @@ class Police(Tower):
     def __init__(self, *args, **kwargs):
         super().__init__(filename=join("assets", "sprite.jpg"), *args, **kwargs)
 
-        self.cost = 5
+        self.cost = 20
         self.projectiles = []
         self.name = "Police"
         self.max_lvl = 2

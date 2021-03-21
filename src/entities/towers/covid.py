@@ -9,7 +9,7 @@ class CovidTower(Tower):
     def __init__(self, *args, **kwargs):
         super().__init__(filename=join("assets", "sprite.jpg"), *args, **kwargs)
 
-        self.cost = 4
+        self.cost = 10
         self.fire_rate = 1.5
         self.dmg = 1
 
