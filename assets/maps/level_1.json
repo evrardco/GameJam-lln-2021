@@ -668,7 +668,7 @@
                         {
                          "name":"json",
                          "type":"string",
-                         "value":"{\"num\": \"1\", \"dt\":\"2\", \"enemies\":[{\"bearer\": \"10\"}, {\"truck\": \"5\"}]}"
+                         "value":"{\"num\": \"1\", \"dt\":\"2\", \"enemies\":[{\"bearer\": \"10\"}, {\"reporter\": \"5\"}]}"
                         }],
                  "rotation":0,
                  "text":

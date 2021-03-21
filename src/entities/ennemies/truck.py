@@ -12,7 +12,7 @@ class Truck(BaseEnemy):
         self.health = 15
         self.speed = 50
         self.radians = 3 * pi/2
-        self.dmg = 100
+        self.dmg = 10
         self.reward = 2
     
 
