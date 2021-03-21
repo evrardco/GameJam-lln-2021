@@ -15,7 +15,7 @@ class BaseEnemy(Sprite):
         self.game_level = game_level
         self.enemies = game_level.enemy_list
         self.dmg = 1
-        self.reward = 10
+        self.reward = 1
 
     
     def on_update(self, delta_time):
