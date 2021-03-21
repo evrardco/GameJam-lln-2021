@@ -1,5 +1,6 @@
 import arcade
 import arcade.gui
+from src.entities.towers.police import Police
 from src.globals import GAME_WIDTH
 from src.entities.towers.redneck import Redneck
 from src.entities.towers.covid import CovidTower
@@ -26,6 +27,8 @@ class TowerButton(arcade.gui.UIFlatButton):
                 new_t = Redneck(self.game_level, center_x=selected_t[0].center_x, center_y=selected_t[0].center_y)
             elif self.text == "5G":
                 new_t = CovidTower(self.game_level, center_x=selected_t[0].center_x, center_y=selected_t[0].center_y)
+            elif self.text == "Police":
+                new_t = Police(self.game_level, center_x=selected_t[0].center_x, center_y=selected_t[0].center_y)
             else:
                 return
             if self.game_level.followers < new_t.cost:
@@ -116,7 +119,7 @@ class PlayerInterface():
 
         towerButton3 = TowerButton(
             self.game_level,
-            'Tower type 3',
+            'Police',
             center_x=GAME_WIDTH + 100,
             center_y=150,
             width=200,
