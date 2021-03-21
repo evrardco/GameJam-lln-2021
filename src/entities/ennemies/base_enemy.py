@@ -21,7 +21,7 @@ class BaseEnemy(Sprite):
 
     def draw(self):
         super().draw()
-        arcade.draw_rectangle_filled(self.center_x, self.center_y, (self.health / self.max_health) * 50, 2, arcade.color.RED)
+        # arcade.draw_rectangle_filled(self.center_x, self.center_y, (self.health / self.max_health) * 50, 2, arcade.color.RED)
         # print((self.health / self.max_health) * 50)
     
     def on_update(self, delta_time):

@@ -8,7 +8,7 @@ texture_delay = 0.1
 
 class Projectile(Sprite):
     def __init__(self, target, tower, *args, **kwargs):
-        super().__init__(join("assets", "sprite.jpg"), *args, **kwargs, scale=0.5)
+        super().__init__(join("assets", "entities", "towers", "rock.png"), *args, **kwargs, scale=0.5)
         self.dmg = tower.dmg
         self.target = target
         self.projectile_list = tower.projectiles
@@ -71,7 +71,7 @@ class Redneck(Tower):
         
         self.cost += self.lvl * 0.5
         self.dmg += self.lvl
-        self.fire_rate += self.lvl * 0.5
+        self.fire_rate -= 0.1
         self.range += 5
 
         return True

@@ -40,7 +40,6 @@ class CovidTower(Tower):
         
         self.cost += self.lvl * 0.5
         self.dmg += self.lvl
-        self.fire_rate += self.lvl * 0.5
         self.range += 5
 
         return True
