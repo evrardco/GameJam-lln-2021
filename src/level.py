@@ -52,7 +52,7 @@ class Level(arcade.View):
 
     def on_hide_view(self):
         self.ui_manager.unregister_handlers()
-
+    
     def setup(self):
         """ Set up this view. """
         self.ui_manager.purge_ui_elements()

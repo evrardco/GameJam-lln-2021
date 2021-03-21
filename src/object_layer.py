@@ -6,6 +6,7 @@ from src.globals import HEIGHT
 class ObjectParser:
     def __init__(self, name):
         self.root = None
+        
         with open(join("assets", "maps", f"{name}.json"), "r") as f:
             self.root = json.load(f)
         for l in self.root["layers"]:
@@ -23,10 +24,13 @@ class ObjectParser:
             elif l["name"] == "tower_spots":
                 self.tower_spots = l["objects"]
 
-            elif l["name"] == "waves":
+            elif l["name"] == "game_info":
+                self.waves = []
                 for o in l["objects"]:
-                    for p in o["properties"]:
-                        if p["name"] == "json":
-                            self.waves = json.loads(p)
+                    if o["name"].beginswith("wave_"):
+                        for p in o["properties"]:
+                            if p["name"] == "json":
+                                self.waves.append(json.loads(p))
+                                
 
 

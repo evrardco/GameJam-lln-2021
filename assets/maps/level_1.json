@@ -662,7 +662,7 @@
                 {
                  "height":19,
                  "id":63,
-                 "name":"waves",
+                 "name":"wave_1",
                  "properties":[
                         {
                          "name":"json",
@@ -672,7 +672,7 @@
                  "rotation":0,
                  "text":
                     {
-                     "text":"waves",
+                     "text":"wave_1",
                      "wrap":true
                     },
                  "type":"",
@@ -689,7 +689,7 @@
                         {
                          "name":"json",
                          "type":"string",
-                         "value":"{\"max_votes\": \"30\", \"followers\": \"10\"}"
+                         "value":"{\"max_votes\": \"30\", \"followers\": \"10\", \"pause_time\": \"20\"}"
                         }],
                  "rotation":0,
                  "text":
