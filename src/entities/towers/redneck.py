@@ -1,14 +1,16 @@
 from arcade import Sprite
+from arcade.texture import load_texture
 from numpy.linalg import norm
 from src.entities.towers.tower import Tower
-from arcade import load_spritesheet
+from arcade import load_spritesheet, load_texture
 from os.path import join
 textures = load_spritesheet(join("assets", "entities", "towers", "redneck.png"), 32, 32, 1, 2)
 texture_delay = 0.1
-
+rock_texture = load_texture(join("assets", "sprite.jpg"))
 class Projectile(Sprite):
     def __init__(self, target, tower, *args, **kwargs):
-        super().__init__(join("assets", "entities", "towers", "rock.png"), *args, **kwargs, scale=0.5)
+        super().__init__(*args, **kwargs, scale=0.5)
+        self.texture = rock_texture
         self.dmg = tower.dmg
         self.target = target
         self.projectile_list = tower.projectiles
@@ -35,7 +37,7 @@ class Redneck(Tower):
     def __init__(self, *args, **kwargs):
         super().__init__(filename=join("assets", "sprite.jpg"), *args, **kwargs)
 
-        self.cost = 2
+        self.cost = 5
         self.projectiles = []
         self.name = "Redneck"
         self.max_lvl = 5

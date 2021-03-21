@@ -690,7 +690,7 @@
                         {
                          "name":"json",
                          "type":"string",
-                         "value":"{\"max_votes\": \"30\", \"followers\": \"10\", \"pause_time\": \"20\"}"
+                         "value":"{\"max_votes\": \"30\", \"followers\": \"15\", \"pause_time\": \"5\"}"
                         }],
                  "rotation":0,
                  "text":
@@ -703,6 +703,28 @@
                  "width":120.625,
                  "x":844.354166666667,
                  "y":45.1666666666667
+                }, 
+                {
+                 "height":19,
+                 "id":66,
+                 "name":"wave_2",
+                 "properties":[
+                        {
+                         "name":"json",
+                         "type":"string",
+                         "value":"{\"num\": \"2\", \"dt\":\"0.3\", \"enemies\":[{\"bearer\": \"50\"}]}"
+                        }],
+                 "rotation":0,
+                 "text":
+                    {
+                     "text":"wave_2",
+                     "wrap":true
+                    },
+                 "type":"",
+                 "visible":true,
+                 "width":120.625,
+                 "x":836.020833333333,
+                 "y":99.5
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -711,7 +733,7 @@
          "y":0
         }],
  "nextlayerid":6,
- "nextobjectid":66,
+ "nextobjectid":67,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.4.3",
