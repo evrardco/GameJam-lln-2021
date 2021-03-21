@@ -1,6 +1,5 @@
 from src.globals import GAME_WIDTH
 from src.entities.towers.tower_spot import TowerSpot
-from src.entities.ennemies.truck import Truck
 import arcade
 
 import arcade.gui
@@ -74,7 +73,7 @@ class Level(arcade.View):
 
         self.tower_list = []
         for p in oparser.tower_spots:
-            self.tower_list.append([TowerSpot(join("assets", "empty.jpg"), center_x=p["x"], center_y=self.window.height - p["y"])])
+            self.tower_list.append([TowerSpot(center_x=p["x"], center_y=self.window.height - p["y"])])
 
 
         self.max_votes = oparser.max_votes
@@ -118,3 +117,9 @@ class Level(arcade.View):
     def set_followers(self, val):
         self.followers = val
         self.interface.update_followers()
+
+    def next_level(self):
+        if self.wave_manager.level_done:
+            self.window.show_view(Level("level_2"))
+        else:
+            print(f"You must finish this level!")
